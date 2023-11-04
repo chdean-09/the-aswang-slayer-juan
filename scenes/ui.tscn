@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1b0h36sjhp3v"]
 
-[ext_resource type="Texture2D" uid="uid://dnmd6bkyed5t" path="res://graphics/holy-meter/bg.png" id="1_fakkw"]
+[ext_resource type="Texture2D" uid="uid://dnmd6bkyed5t" path="res://assets/holy-meter/bg.png" id="1_fakkw"]
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_uen28"]
-[ext_resource type="Texture2D" uid="uid://g157i4a8fen5" path="res://graphics/holy-meter/progress.png" id="2_uoonq"]
+[ext_resource type="Texture2D" uid="uid://g157i4a8fen5" path="res://assets/holy-meter/progress.png" id="2_uoonq"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_uen28")
