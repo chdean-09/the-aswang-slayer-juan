@@ -11,4 +11,7 @@ script = ExtResource("1_cyoyn")
 
 [node name="Player" parent="." instance=ExtResource("2_v0m0t")]
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+
 [node name="UI" parent="." instance=ExtResource("3_5mwrd")]
