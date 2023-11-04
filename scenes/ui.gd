@@ -13,6 +13,10 @@ func _process(delta):
 	current_bar_value -= BAR_SPEED * delta
 	# Don't go below zero
 	current_bar_value = max(current_bar_value, 0)
-	
+		
 	# Assuming this is a node you have set up
+	$HolyMeter/TextureProgressBar.value = current_bar_value
+	
+func update_holy_meter():
+	current_bar_value += 3
 	$HolyMeter/TextureProgressBar.value = current_bar_value

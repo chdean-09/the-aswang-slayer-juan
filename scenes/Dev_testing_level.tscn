@@ -50,3 +50,5 @@ position = Vector2(1192, -174)
 
 [node name="HolyPoint4" parent="." instance=ExtResource("5_u23i2")]
 position = Vector2(628, -348)
+
+[connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]

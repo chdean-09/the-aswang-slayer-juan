@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal update_stats
+
 var acceleration = 350
 var min_plr_speed = 600
 var plr_speed =  0 
@@ -27,3 +29,7 @@ func _process(delta):
 		print("left mouse button")
 	if Input.is_action_pressed("rmb"):
 		print("right mouse button")
+
+func add_item() -> void:
+	update_stats.emit()
+	
