@@ -5,7 +5,7 @@ signal update_stats
 var acceleration = 50
 var min_plr_speed = 40
 var plr_speed =  0 
-var max_plr_speed = 100 # 2x of min speed
+var max_plr_speed = 100 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +24,8 @@ func _process(delta):
 			plr_speed = max_plr_speed
 	velocity = direction*plr_speed
 	move_and_slide()
+	
+	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("lmb"):
 		print("left mouse button")
