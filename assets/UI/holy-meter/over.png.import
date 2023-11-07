@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnmd6bkyed5t"
-path="res://.godot/imported/bg.png-8d98b3e9a5711bb7c170ce5074e0b1ef.ctex"
+uid="uid://bq6cc1ycocim6"
+path="res://.godot/imported/over.png-5f4d96285cf44f9f9fcf01df3fdc789e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/holy-meter/bg.png"
-dest_files=["res://.godot/imported/bg.png-8d98b3e9a5711bb7c170ce5074e0b1ef.ctex"]
+source_file="res://assets/UI/holy-meter/over.png"
+dest_files=["res://.godot/imported/over.png-5f4d96285cf44f9f9fcf01df3fdc789e.ctex"]
 
 [params]
 

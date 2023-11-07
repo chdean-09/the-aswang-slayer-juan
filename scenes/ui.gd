@@ -15,7 +15,7 @@ func _process(delta):
 	# Don't go below zero
 	current_bar_value = max(current_bar_value, 0)
 	
-	$HolyMeter/TextureProgressBar.value = current_bar_value
+	$Control/Stats/HolyMeter.value = current_bar_value
 	
 func update_holy_meter():
 	current_bar_value += 3
@@ -23,4 +23,4 @@ func update_holy_meter():
 	# Don't go above max value
 	current_bar_value = min(current_bar_value, 100)
 	
-	$HolyMeter/TextureProgressBar.value = current_bar_value
+	$Control/Stats/HolyMeter.value = current_bar_value
