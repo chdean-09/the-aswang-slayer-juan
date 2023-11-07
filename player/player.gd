@@ -2,10 +2,10 @@ extends CharacterBody2D
 
 signal update_stats
 
-var acceleration = 350
-var min_plr_speed = 600
+var acceleration = 50
+var min_plr_speed = 40
 var plr_speed =  0 
-var max_plr_speed = 1200 # 2x of min speed
+var max_plr_speed = 100 # 2x of min speed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
