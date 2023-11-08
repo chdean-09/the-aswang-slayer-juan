@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Level.gd" id="1_ofb8x"]
 [ext_resource type="PackedScene" uid="uid://qfmgp078jue1" path="res://player/player.tscn" id="2_cqdfb"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="4_i336d"]
+[ext_resource type="PackedScene" uid="uid://d1b0h36sjhp3v" path="res://scenes/ui.tscn" id="4_i336d"]
 [ext_resource type="Texture2D" uid="uid://y3k5vvmefcal" path="res://assets/Locations/URBAN-1.png" id="5_05dl5"]
-[ext_resource type="PackedScene" path="res://scenes/holy_point.tscn" id="5_u23i2"]
+[ext_resource type="PackedScene" uid="uid://xsfkfgrnfiqw" path="res://scenes/holy_point.tscn" id="5_u23i2"]
 [ext_resource type="Texture2D" uid="uid://bvkquadht46hw" path="res://assets/Locations/highway-2.png" id="6_ae8so"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28ci2"]
