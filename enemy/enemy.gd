@@ -12,12 +12,11 @@ func _process(_delta):
 func _physics_process(_delta: float) -> void:
 	if nav_agent.distance_to_target() > 15:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity = direction * speed
+		velocity = direction * speed 
 		move_and_slide()
 
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
-	print(nav_agent.distance_to_target())
 
 func _on_timer_timeout():
 	makepath()

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xlfw4bmscv25"
-path="res://.godot/imported/FRAME 3.png-77726a64c42963883aace0e25be5e37d.ctex"
+uid="uid://bdfxxy5strt3d"
+path="res://.godot/imported/player_spear_attack.png-70c1a324bb44ab06ef32246c5d7a1a25.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CHARACTER - SPEAR/FRAME 3.png"
-dest_files=["res://.godot/imported/FRAME 3.png-77726a64c42963883aace0e25be5e37d.ctex"]
+source_file="res://player/player_spear_attack.png"
+dest_files=["res://.godot/imported/player_spear_attack.png-70c1a324bb44ab06ef32246c5d7a1a25.ctex"]
 
 [params]
 
