@@ -11,3 +11,6 @@ var health = 100:
 		else:
 			health = value
 		health_change.emit()
+
+func dealDamage(damage):
+	health -= damage
