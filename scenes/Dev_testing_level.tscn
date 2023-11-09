@@ -25593,26 +25593,30 @@ script = ExtResource("1_ofb8x")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_cqdfb")]
-position = Vector2(698, 851)
+position = Vector2(721, 860)
 scale = Vector2(0.1, 0.1)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0.00195312, -9.99951)
-zoom = Vector2(5, 5)
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(19.9995, -0.000488281)
+zoom = Vector2(9, 9)
 
 [node name="UI" parent="." instance=ExtResource("4_i336d")]
 
 [node name="HolyPoint" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(578, 1741)
+position = Vector2(440, 243)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint2" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(275, 1804)
+position = Vector2(270, 818)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint3" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(1159, 1407)
+position = Vector2(1090, 592)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint4" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(734, 1500)
+position = Vector2(-124, 344)
+scale = Vector2(0.3, 0.3)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-194, 8)
