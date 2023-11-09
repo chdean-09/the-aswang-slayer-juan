@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 signal update_stats
 
-var selected_skill
+@export var plr_speed =  0 
 var acceleration = 50
 var min_plr_speed = 40
-var plr_speed =  0 
 var max_plr_speed = 100 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,13 +26,19 @@ func _process(delta):
 	velocity = direction*plr_speed
 	move_and_slide()
 	
-	look_at(get_global_mouse_position())
+	rotate(get_angle_to(get_global_mouse_position()))
 	
 	if Input.is_action_pressed("lmb"):
-		print("left mouse button")
+		$AnimationPlayer.play("spear_attack")
+		$SpearAttackTimer.start()
+		
 	if Input.is_action_pressed("rmb"):
 		print("right mouse button")
+		
+		
 
 func add_item() -> void:
 	update_stats.emit()
-	
+
+func _on_spear_attack_timer_timeout():
+	$AnimationPlayer.play('idle')
