@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://qfmgp078jue1"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_toow7"]
-[ext_resource type="Texture2D" path="res://player/player_idle.png" id="2_mt0oy"]
+[ext_resource type="Texture2D" uid="uid://cghmq66syrbqs" path="res://player/player_idle.png" id="2_mt0oy"]
 [ext_resource type="Script" path="res://player/Camera2D.gd" id="3_amdnf"]
-[ext_resource type="Texture2D" path="res://player/player_spear_attack.png" id="4_mqhs6"]
+[ext_resource type="Texture2D" uid="uid://bdfxxy5strt3d" path="res://player/player_spear_attack.png" id="4_mqhs6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2omh"]
 radius = 72.0069
