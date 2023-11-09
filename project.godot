@@ -15,6 +15,15 @@ run/main_scene="res://scenes/Menu/Menu.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://globals.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [input]
 
 move_up={

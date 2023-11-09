@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://buaf37kufst6t"]
+
+[ext_resource type="Texture2D" uid="uid://boi56psjo1827" path="res://assets/UI/hotbar/hotbar.png" id="1_ybt43"]
+[ext_resource type="Texture2D" uid="uid://dn5b0omx1pcmc" path="res://assets/UI/hotbar/hotbar-chosen.png" id="2_xebid"]
+[ext_resource type="Script" path="res://scenes/Slot1.gd" id="3_a5n0y"]
+
+[node name="Slot1" type="TextureButton"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource("1_ybt43")
+texture_pressed = ExtResource("2_xebid")
+stretch_mode = 5
+script = ExtResource("3_a5n0y")

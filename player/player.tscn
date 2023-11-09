@@ -180,7 +180,7 @@ rotation = -1.61361
 texture = ExtResource("2_mt0oy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, -10)
+position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_j2omh")
 
 [node name="Camera2D" type="Camera2D" parent="."]

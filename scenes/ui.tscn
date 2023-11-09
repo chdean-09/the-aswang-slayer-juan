@@ -1,30 +1,251 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1b0h36sjhp3v"]
+[gd_scene load_steps=7 format=3 uid="uid://d1b0h36sjhp3v"]
 
-[ext_resource type="Texture2D" uid="uid://dnmd6bkyed5t" path="res://assets/holy-meter/bg.png" id="1_fakkw"]
 [ext_resource type="Script" path="res://scenes/ui.gd" id="1_uen28"]
-[ext_resource type="Texture2D" uid="uid://g157i4a8fen5" path="res://assets/holy-meter/progress.png" id="2_uoonq"]
+[ext_resource type="Texture2D" uid="uid://dnmd6bkyed5t" path="res://assets/UI/holy-meter/bg.png" id="2_ygu1b"]
+[ext_resource type="Texture2D" uid="uid://g157i4a8fen5" path="res://assets/UI/holy-meter/progress.png" id="3_wp1ji"]
+[ext_resource type="Texture2D" uid="uid://bbnc67yjnkwv2" path="res://assets/UI/health-bar/health.png" id="4_0sgdo"]
+[ext_resource type="PackedScene" uid="uid://buaf37kufst6t" path="res://scenes/slot_1.tscn" id="5_b7dhi"]
+[ext_resource type="Texture2D" uid="uid://boi56psjo1827" path="res://assets/UI/hotbar/hotbar.png" id="5_rrfym"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_uen28")
 
-[node name="HolyMeter" type="MarginContainer" parent="."]
-layout_direction = 3
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -204.5
-offset_top = 25.0
-offset_right = 204.5
-offset_bottom = 55.0
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
-scale = Vector2(1.3, 1.3)
+grow_vertical = 2
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="HolyMeter"]
+[node name="Stats" type="GridContainer" parent="Control"]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 416.0
+offset_bottom = 88.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="HolyMeter" type="TextureProgressBar" parent="Control/Stats"]
 layout_mode = 2
 value = 100.0
-texture_under = ExtResource("1_fakkw")
-texture_progress = ExtResource("2_uoonq")
+texture_under = ExtResource("2_ygu1b")
+texture_progress = ExtResource("3_wp1ji")
 
-[node name="Label" type="Label" parent="HolyMeter"]
+[node name="Label" type="Label" parent="Control/Stats"]
 layout_mode = 2
 text = "Holy Meter"
+
+[node name="Health" type="TextureProgressBar" parent="Control/Stats"]
+layout_mode = 2
+value = 100.0
+texture_under = ExtResource("2_ygu1b")
+texture_progress = ExtResource("4_0sgdo")
+
+[node name="Label2" type="Label" parent="Control/Stats"]
+layout_mode = 2
+text = "Health"
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.99
+anchor_right = 0.5
+anchor_bottom = 0.99
+offset_left = -233.0
+offset_top = -126.0
+offset_right = 148.0
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.2, 1.2)
+theme_override_constants/h_separation = -1
+columns = 5
+
+[node name="Slot1" parent="Control/GridContainer" instance=ExtResource("5_b7dhi")]
+layout_mode = 2
+
+[node name="Slot2" parent="Control/GridContainer" instance=ExtResource("5_b7dhi")]
+layout_mode = 2
+
+[node name="Slot3" parent="Control/GridContainer" instance=ExtResource("5_b7dhi")]
+layout_mode = 2
+
+[node name="Slot4" parent="Control/GridContainer" instance=ExtResource("5_b7dhi")]
+layout_mode = 2
+
+[node name="Slot5" parent="Control/GridContainer" instance=ExtResource("5_b7dhi")]
+layout_mode = 2
+
+[node name="Hotbar" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/Hotbar"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -120.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Hotbar/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.5
+offset_right = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Slot" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot2" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot2" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot3" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot3" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot4" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot4" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot5" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot5" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot6" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot6" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot7" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot7" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot8" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot8" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot9" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot9" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot10" type="TextureRect" parent="Control/Hotbar/TextureRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_rrfym")
+expand_mode = 3
+
+[node name="TextureButton" type="TextureButton" parent="Control/Hotbar/TextureRect/HBoxContainer/Slot10" groups=["Shortcuts"]]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
