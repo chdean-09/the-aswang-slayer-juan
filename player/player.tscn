@@ -1,16 +1,15 @@
 [gd_scene load_steps=10 format=3 uid="uid://qfmgp078jue1"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_toow7"]
-[ext_resource type="Texture2D" uid="uid://cghmq66syrbqs" path="res://player/player_idle.png" id="2_mt0oy"]
+[ext_resource type="Texture2D" path="res://player/player_idle.png" id="2_mt0oy"]
 [ext_resource type="Script" path="res://player/Camera2D.gd" id="3_amdnf"]
-[ext_resource type="Texture2D" uid="uid://bdfxxy5strt3d" path="res://player/player_spear_attack.png" id="4_mqhs6"]
+[ext_resource type="Texture2D" path="res://player/player_spear_attack.png" id="4_mqhs6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2omh"]
-radius = 70.0071
+radius = 72.0069
 
-[sub_resource type="Animation" id="Animation_pfpag"]
-resource_name = "idle"
-length = 4.0
+[sub_resource type="Animation" id="Animation_5f6yc"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -60,8 +59,9 @@ tracks/3/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_5f6yc"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_pfpag"]
+resource_name = "idle"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
