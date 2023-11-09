@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://Level.gd" id="1_ofb8x"]
 [ext_resource type="PackedScene" uid="uid://qfmgp078jue1" path="res://player/player.tscn" id="2_cqdfb"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="4_i336d"]
+[ext_resource type="PackedScene" uid="uid://d1b0h36sjhp3v" path="res://scenes/ui.tscn" id="4_i336d"]
 [ext_resource type="Texture2D" uid="uid://y3k5vvmefcal" path="res://assets/Locations/URBAN-1.png" id="5_05dl5"]
-[ext_resource type="PackedScene" path="res://scenes/holy_point.tscn" id="5_u23i2"]
+[ext_resource type="PackedScene" uid="uid://xsfkfgrnfiqw" path="res://scenes/holy_point.tscn" id="5_u23i2"]
 [ext_resource type="Texture2D" uid="uid://bvkquadht46hw" path="res://assets/Locations/highway-2.png" id="6_ae8so"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28ci2"]
@@ -25593,26 +25593,30 @@ script = ExtResource("1_ofb8x")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("2_cqdfb")]
-position = Vector2(698, 851)
+position = Vector2(721, 860)
 scale = Vector2(0.1, 0.1)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(0.00195312, -9.99951)
-zoom = Vector2(5, 5)
+[node name="Camera2D2" type="Camera2D" parent="Player"]
+position = Vector2(19.9995, -0.000488281)
+zoom = Vector2(9, 9)
 
 [node name="UI" parent="." instance=ExtResource("4_i336d")]
 
 [node name="HolyPoint" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(578, 1741)
+position = Vector2(440, 243)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint2" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(275, 1804)
+position = Vector2(270, 818)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint3" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(1159, 1407)
+position = Vector2(1090, 592)
+scale = Vector2(0.3, 0.3)
 
 [node name="HolyPoint4" parent="." instance=ExtResource("5_u23i2")]
-position = Vector2(734, 1500)
+position = Vector2(-124, 344)
+scale = Vector2(0.3, 0.3)
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-194, 8)
