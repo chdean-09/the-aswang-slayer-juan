@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://tvbqtv1u6255"]
+[gd_scene load_steps=11 format=3 uid="uid://tvbqtv1u6255"]
 
 [ext_resource type="Script" path="res://Level.gd" id="1_4qd5c"]
 [ext_resource type="PackedScene" uid="uid://d1b0h36sjhp3v" path="res://scenes/ui.tscn" id="2_hbvox"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://y3k5vvmefcal" path="res://assets/Locations/URBAN-1.png" id="4_avopj"]
 [ext_resource type="Texture2D" uid="uid://bvkquadht46hw" path="res://assets/Locations/highway-2.png" id="5_n2nwk"]
 [ext_resource type="PackedScene" uid="uid://qfmgp078jue1" path="res://player/player.tscn" id="6_euu1q"]
+[ext_resource type="PackedScene" uid="uid://d0j2vmqhbm1cb" path="res://enemy/enemy.tscn" id="7_8exxk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_28ci2"]
 texture = ExtResource("4_avopj")
@@ -25620,3 +25621,7 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 589824, 0, 1, 655360, 0, 2, 7
 
 [node name="Player" parent="." instance=ExtResource("6_euu1q")]
 position = Vector2(705, 840)
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("7_8exxk")]
+position = Vector2(412, 508)
+player = NodePath("../Player")
