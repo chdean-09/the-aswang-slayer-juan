@@ -26,7 +26,7 @@ func _process(delta):
 	velocity = direction*plr_speed
 	move_and_slide()
 	
-	look_at(get_global_mouse_position())
+	rotate(get_angle_to(get_global_mouse_position()))
 	
 	if Input.is_action_pressed("lmb"):
 		$AnimationPlayer.play("spear_attack")
