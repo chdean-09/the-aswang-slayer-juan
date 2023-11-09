@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal update_stats
 
+var selected_skill
 var acceleration = 50
 var min_plr_speed = 40
 var plr_speed =  0 
