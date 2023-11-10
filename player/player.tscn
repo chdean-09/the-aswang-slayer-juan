@@ -1,19 +1,28 @@
-[gd_scene load_steps=10 format=3 uid="uid://qfmgp078jue1"]
+[gd_scene load_steps=15 format=3 uid="uid://qfmgp078jue1"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_toow7"]
 [ext_resource type="Texture2D" uid="uid://cghmq66syrbqs" path="res://player/player_idle.png" id="2_mt0oy"]
+[ext_resource type="Texture2D" uid="uid://dm3051man71sk" path="res://player/player_arnis_attack.png" id="3_2hdwb"]
 [ext_resource type="Script" path="res://player/Camera2D.gd" id="3_amdnf"]
 [ext_resource type="Texture2D" uid="uid://bdfxxy5strt3d" path="res://player/player_spear_attack.png" id="4_mqhs6"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28uul"]
+radius = 29.6548
+height = 447.038
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_johha"]
+radius = 57.6481
+height = 244.13
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2omh"]
-radius = 72.0069
+radius = 90.0
 
 [sub_resource type="Animation" id="Animation_5f6yc"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/path = NodePath("Node2D/PlayerSprite_spear:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:hframes")
+tracks/1/path = NodePath("Node2D/PlayerSprite_spear:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -37,7 +46,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:vframes")
+tracks/2/path = NodePath("Node2D/PlayerSprite_spear:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -49,7 +58,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:frame")
+tracks/3/path = NodePath("Node2D/PlayerSprite_spear:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -58,66 +67,63 @@ tracks/3/keys = {
 "update": 1,
 "values": [0]
 }
-
-[sub_resource type="Animation" id="Animation_pfpag"]
-resource_name = "idle"
-length = 4.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint/SpearHitbox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_mt0oy")]
+"values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Node2D/PlayerSprite_arnis:frame")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Node2D/PlayerSprite_arnis:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, -30)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Node2D/PlayerSprite_arnis/ArnisPoint/ArnisAttackPoint/ArnisHitbox:disabled")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_14efx"]
 resource_name = "spear_attack"
-length = 0.4
+length = 0.35
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite:texture")
+tracks/0/path = NodePath("Node2D/PlayerSprite_spear:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -129,7 +135,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite:hframes")
+tracks/1/path = NodePath("Node2D/PlayerSprite_spear:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -141,7 +147,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PlayerSprite:vframes")
+tracks/2/path = NodePath("Node2D/PlayerSprite_spear:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -153,7 +159,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("PlayerSprite:frame")
+tracks/3/path = NodePath("Node2D/PlayerSprite_spear:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -162,25 +168,180 @@ tracks/3/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint/SpearHitbox:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_gwaqr"]
+resource_name = "arnis_attack"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/PlayerSprite_arnis:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 2, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/PlayerSprite_arnis:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(70, 40), Vector2(80, -30), Vector2(60, -120), Vector2(80, -30), Vector2(60, -10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/PlayerSprite_arnis/ArnisPoint/ArnisAttackPoint/ArnisHitbox:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_e0akd"]
+resource_name = "arnis_idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/PlayerSprite_arnis:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pfpag"]
+resource_name = "spear_idle"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/PlayerSprite_spear:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_mt0oy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node2D/PlayerSprite_spear:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Node2D/PlayerSprite_spear:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Node2D/PlayerSprite_spear:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_1pppf"]
 _data = {
 "RESET": SubResource("Animation_5f6yc"),
-"idle": SubResource("Animation_pfpag"),
-"spear_attack": SubResource("Animation_14efx")
+"arnis_attack": SubResource("Animation_gwaqr"),
+"arnis_idle": SubResource("Animation_e0akd"),
+"spear_attack": SubResource("Animation_14efx"),
+"spear_idle": SubResource("Animation_pfpag")
 }
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_toow7")
 
-[node name="PlayerSprite" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="PlayerSprite_spear" type="Sprite2D" parent="Node2D"]
+visible = false
 position = Vector2(120, 0)
 rotation = -1.61361
+scale = Vector2(1, 1)
 texture = ExtResource("2_mt0oy")
 
+[node name="SpearPoint" type="Marker2D" parent="Node2D/PlayerSprite_spear"]
+position = Vector2(-37.2486, 168.56)
+rotation = 1.61361
+
+[node name="SpearAttackPoint" type="Area2D" parent="Node2D/PlayerSprite_spear/SpearPoint"]
+
+[node name="SpearHitbox" type="CollisionShape2D" parent="Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint"]
+position = Vector2(-80, 10)
+rotation = 1.41895
+shape = SubResource("CapsuleShape2D_28uul")
+disabled = true
+
+[node name="PlayerSprite_arnis" type="Sprite2D" parent="Node2D"]
+position = Vector2(80, -30)
+rotation = 4.45932
+scale = Vector2(1.43039, 1.43039)
+texture = ExtResource("3_2hdwb")
+hframes = 5
+
+[node name="ArnisPoint" type="Marker2D" parent="Node2D/PlayerSprite_arnis"]
+
+[node name="ArnisAttackPoint" type="Area2D" parent="Node2D/PlayerSprite_arnis/ArnisPoint"]
+
+[node name="ArnisHitbox" type="CollisionShape2D" parent="Node2D/PlayerSprite_arnis/ArnisPoint/ArnisAttackPoint"]
+position = Vector2(-130.35, -26.4897)
+shape = SubResource("CapsuleShape2D_johha")
+disabled = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0)
+position = Vector2(10, 0)
 shape = SubResource("CircleShape2D_j2omh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -196,10 +357,5 @@ libraries = {
 [node name="SpearAttackTimer" type="Timer" parent="."]
 process_callback = 0
 wait_time = 0.5
-
-[node name="SpearPoint" type="Node2D" parent="."]
-position = Vector2(290, 30)
-
-[node name="SpearAttackPoint" type="Marker2D" parent="SpearPoint"]
 
 [connection signal="timeout" from="SpearAttackTimer" to="." method="_on_spear_attack_timer_timeout"]
