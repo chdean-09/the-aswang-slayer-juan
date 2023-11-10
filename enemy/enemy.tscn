@@ -1,9 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0j2vmqhbm1cb"]
+[gd_scene load_steps=7 format=3 uid="uid://d0j2vmqhbm1cb"]
 
 [ext_resource type="Texture2D" uid="uid://decirebw7sj6d" path="res://enemy/mobs/AMALANHIG TOP-export.png" id="1_o2bvy"]
 [ext_resource type="Script" path="res://enemy/enemy.gd" id="1_tb6tt"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8nia7"]
+radius = 73.2701
+height = 293.08
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_t14v5"]
+
+[sub_resource type="Animation" id="Animation_xs6pq"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrl7g"]
+_data = {
+"attack": SubResource("Animation_xs6pq")
+}
 
 [node name="Enemy" type="CharacterBody2D"]
 position = Vector2(18, 2)
@@ -16,15 +28,30 @@ scale = Vector2(0.0770997, 0.0770997)
 texture = ExtResource("1_o2bvy")
 flip_h = true
 
+[node name="Marker2D" type="Marker2D" parent="Sprite2D"]
+position = Vector2(25.9404, -103.762)
+
+[node name="Area2D" type="Area2D" parent="Sprite2D/Marker2D"]
+position = Vector2(155.643, 25.9404)
+rotation = -0.733038
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Marker2D/Area2D"]
+position = Vector2(6.10352e-05, 3.05176e-05)
+shape = SubResource("CapsuleShape2D_8nia7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_t14v5")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wrl7g")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
