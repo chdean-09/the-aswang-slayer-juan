@@ -10,13 +10,23 @@ func _process(_delta):
 	sprite.look_at(player.global_position)
 
 func _physics_process(_delta: float) -> void:
-	if nav_agent.distance_to_target() > 15:
+	if nav_agent.distance_to_target() > 17:
 		var direction = to_local(nav_agent.get_next_path_position()).normalized()
 		velocity = direction * speed 
+		$AnimationPlayer.play("idle")
 		move_and_slide()
+	else:
+		attack()
+
+func attack():
+		$AnimationPlayer.play("attack")
+		$AttackTimer.start()
 
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
 
 func _on_timer_timeout():
 	makepath()
+
+func _on_attack_timer_timeout():
+	$AnimationPlayer.play("idle")
