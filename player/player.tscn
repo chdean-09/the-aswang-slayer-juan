@@ -694,6 +694,16 @@ libraries = {
 
 [node name="SpearAttackTimer" type="Timer" parent="."]
 process_callback = 0
+wait_time = 0.35
+
+[node name="ArnisAttackTimer" type="Timer" parent="."]
+process_callback = 0
 wait_time = 0.5
 
+[node name="DashCooldownTimer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 1.5
+one_shot = true
+
 [connection signal="timeout" from="SpearAttackTimer" to="." method="_on_spear_attack_timer_timeout"]
+[connection signal="timeout" from="ArnisAttackTimer" to="." method="_on_arnis_attack_timer_timeout"]
