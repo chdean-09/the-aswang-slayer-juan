@@ -17,3 +17,5 @@ func dealDamage(damage):
 		health = 0
 	else:
 		health -= damage
+
+var player_position: Vector2
