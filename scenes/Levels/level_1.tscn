@@ -28293,8 +28293,13 @@ position = Vector2(774, 801)
 player = NodePath("../Player")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 100.0
 autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
 
 [connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
