@@ -29,7 +29,7 @@ func _process(delta):
 	rotate(get_angle_to(get_global_mouse_position()))
 	
 	if Input.is_action_pressed("lmb"):
-		$AnimationPlayer.play("spear_attack")
+		$AnimationPlayer.play("arnis_attack")
 		$SpearAttackTimer.start()
 		
 	if Input.is_action_pressed("rmb"):
@@ -41,4 +41,4 @@ func add_item() -> void:
 	update_stats.emit()
 
 func _on_spear_attack_timer_timeout():
-	$AnimationPlayer.play('idle')
+	$AnimationPlayer.play('arnis_idle')
