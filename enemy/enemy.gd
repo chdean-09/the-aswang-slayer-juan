@@ -7,7 +7,7 @@ const speed = 35
 @onready var sprite := $Sprite2D as Sprite2D
 
 func _process(_delta):
-	sprite.look_at(player.global_position)
+	sprite.look_at(Globals.player_position)
 
 func _physics_process(_delta: float) -> void:
 	if nav_agent.distance_to_target() > 17:
@@ -23,7 +23,7 @@ func attack():
 		$AttackTimer.start()
 
 func makepath() -> void:
-	nav_agent.target_position = player.global_position
+	nav_agent.target_position = Globals.player_position
 
 func _on_timer_timeout():
 	makepath()

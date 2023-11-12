@@ -28266,10 +28266,6 @@ script = ExtResource("1_ofb8x")
 [node name="Player" parent="." instance=ExtResource("2_cqdfb")]
 position = Vector2(698, 851)
 
-[node name="Camera2D2" type="Camera2D" parent="Player"]
-position = Vector2(0.00195312, -9.99951)
-zoom = Vector2(5, 5)
-
 [node name="UI" parent="." instance=ExtResource("4_i336d")]
 
 [node name="HolyPoint" parent="." instance=ExtResource("5_u23i2")]
@@ -28296,4 +28292,14 @@ layer_0/tile_data = PackedInt32Array(524288, 0, 0, 589824, 0, 1, 655360, 0, 2, 7
 position = Vector2(774, 801)
 player = NodePath("../Player")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 100.0
+autostart = true
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
 [connection signal="update_stats" from="Player" to="." method="_on_player_update_stats"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

@@ -13,4 +13,9 @@ var health = 100:
 		health_change.emit()
 
 func dealDamage(damage):
-	health -= damage
+	if damage > health:
+		health = 0
+	else:
+		health -= damage
+
+var player_position: Vector2

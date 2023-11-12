@@ -18,6 +18,7 @@ signal update_stats
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	Globals.player_position = global_position
 	if Input.is_action_just_pressed("bar_1"):
 		current_weapon = weapons["Spear"]
 		$AnimationPlayer.play("spear_idle")
