@@ -6,6 +6,8 @@ signal update_stats
 @onready var acceleration = 50
 @onready var min_plr_speed = 40
 @onready var max_plr_speed = 100 
+var health = 500
+var enemy_damage = 5
 
 @onready var dash_scale = 5 #Multiplier for speed
 @onready var dash_timer = $DashCooldownTimer
@@ -51,6 +53,7 @@ func _process(delta):
 			print('spear atk')
 			$AnimationPlayer.play("spear_attack")
 			spear_timer.start()
+			attack()
 		elif current_weapon == weapons["Arnis"] and arnis_timer.is_stopped():
 			print('arnis atk')
 			$AnimationPlayer.play("arnis_attack")
@@ -59,7 +62,20 @@ func _process(delta):
 	if Input.is_action_pressed("rmb"):
 		print(current_weapon)
 		
-		
+func attack():
+	# Ensure that the player has an Area2D or CollisionShape2D as a child
+	if is_inside_tree() and has_node("Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint"):
+		var bodies = get_node("Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint").get_overlapping_bodies()
+		for body in bodies:
+			if body.has_method("take_damage"):
+				body.take_damage(enemy_damage)
+
+func take_damage(amount):
+	# Reduce player health when hit by an enemy attack
+	health -= amount
+	print("My health is:", health)
+	if health <= 0:
+		die()
 
 func add_item() -> void:
 	update_stats.emit()
@@ -74,3 +90,5 @@ func _on_arnis_attack_timer_timeout():
 		$AnimationPlayer.play('arnis_idle')
 	arnis_timer.stop()
 
+func die():
+	queue_free()

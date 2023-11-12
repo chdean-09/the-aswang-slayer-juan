@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://bdfxxy5strt3d" path="res://player/player_spear_attack.png" id="4_mqhs6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28uul"]
-radius = 163.417
-height = 1753.32
+radius = 195.382
+height = 981.77
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2omh"]
-radius = 90.0
+radius = 80.0
 
 [sub_resource type="Animation" id="Animation_5f6yc"]
 length = 0.001
@@ -666,10 +666,11 @@ rotation = -1.61361
 texture = ExtResource("2_mt0oy")
 
 [node name="SpearPoint" type="Marker2D" parent="Node2D/PlayerSprite_spear"]
-position = Vector2(-4.28009, 99.9084)
+position = Vector2(-14.2709, 99.4805)
 rotation = 1.61361
 
 [node name="SpearAttackPoint" type="Area2D" parent="Node2D/PlayerSprite_spear/SpearPoint"]
+position = Vector2(60, -10)
 
 [node name="SpearHitbox" type="CollisionShape2D" parent="Node2D/PlayerSprite_spear/SpearPoint/SpearAttackPoint"]
 position = Vector2(-100, 130)
@@ -679,10 +680,11 @@ shape = SubResource("CapsuleShape2D_28uul")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(10, 0)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_j2omh")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(20, -30)
 scale = Vector2(0.1, 0.1)
 zoom = Vector2(5, 5)
 script = ExtResource("3_amdnf")
